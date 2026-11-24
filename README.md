@@ -4,7 +4,7 @@ You've published a new post, and now you need to link to it from your older ones
 
 A plugin like Internal Link Juicer can add those links for you. You give it keywords, and it links them wherever they appear. But it only matches words. It doesn't know what a sentence means, so when an older post describes the same thing differently, the plugin misses it.
 
-This Claude skill reads your older posts and looks for places where a reader would want to open the new one, even if your keywords aren't there. For example, one medical article mentions "memory problems" in a list of symptoms. The skill suggested linking those words to a new article about a possible cause of dementia. A plugin looking for the word "dementia" would have skipped that sentence.
+This Claude skill reads your older posts and looks for places where a reader would want to open the new one, even if your keywords aren't there. For example, a medical article mentions "memory problems" in a list of symptoms. The skill suggests linking those words to a new article about a possible cause of dementia. A plugin looking for the word "dementia" would have skipped that sentence.
 
 Give Claude the address of your new post. It will show you which sentences to link from and which words to turn into links. You choose the ones you like and add them to your site yourself. When you're done, Claude checks that the links are there and lead to the right page.
 
