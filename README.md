@@ -29,12 +29,12 @@ The format of `links.json` is in [SKILL.md](SKILL.md).
 
 WordPress sites are read through their public API, others through their sitemap, one request a second. It doesn't sign in anywhere and doesn't change anything.
 
-## Limits
+## Good to know
 
-- Only headings, paragraphs and lists are read. Tables, figures, asides, forms, buttons, footnotes, menus and page footers are left out, with the links in them.
-- Text a stylesheet hides is read too. Framer, for one, can keep hidden copies of a paragraph for other screen sizes, and the check then finds its sentence more than once.
-- On WordPress, `read` sees the post itself and `check` the whole page, so only `check` sees a "related posts" list under it. On other sites both do, and such a list counts as a link.
-- Up to 1,000 posts, or 300 pages of a sitemap. WordPress pages, as opposed to posts, are read when there are 100 or fewer; other post types, such as products or case studies, aren't.
-- Languages are told apart by the page's `hreflang` tags. Without them, a multilingual site read through its sitemap comes out mixed.
-- `find` looks for words. Whether a sentence should carry the link is for Claude, and then you, to judge.
-- There's no target number of links. Google asks for at least one to every page you care about, and gives [no ideal number](https://developers.google.com/search/docs/crawling-indexing/links-crawlable).
+- The skill won't find every good place, and some of its suggestions will be weak. You decide which ones to use.
+- It looks at headings, paragraphs and lists. Tables, captions, buttons, footnotes, menus, sidebars and footers are skipped.
+- On a WordPress site it reads up to 1,000 posts, plus pages if there are no more than 100. Products, case studies and other kinds of content aren't read. On any other site it reads up to 300 pages.
+- If an older page already links to your new post, the skill won't suggest another link there. A link in a "related posts" list can count too.
+- Some website builders, such as Framer, keep hidden copies of a paragraph for different screen sizes. The skill sees those copies, so it may say that a sentence is on the page more than once.
+- If your site is in several languages, it needs hreflang tags to tell them apart. Without them, it can mix the languages up.
+- Don't aim for a certain number of links. Google recommends at least one to every page you care about and says there's [no ideal number](https://developers.google.com/search/docs/crawling-indexing/links-crawlable).
