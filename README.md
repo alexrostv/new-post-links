@@ -1,8 +1,12 @@
 # new-post-links
 
-A plugin can link matching terms. This Claude skill looks for the links it can't make: sentences on your site that raise a question your new page answers, even when they have none of its words. On a medical site, "memory problems" in a list of symptoms now leads to an article on a neck vein and dementia.
+You've published a new post, and now you need to link to it from your older ones.
 
-It reads your site and proposes exact edits: this page, this sentence, these words as the link. You make the edits. Then it checks that each link is live, in the right sentence, with the right address.
+A plugin like Internal Link Juicer can add those links for you. You give it keywords, and it links them wherever they appear. But it only matches words. It doesn't know what a sentence means, so when an older post describes the same thing differently, the plugin misses it.
+
+This Claude skill reads your older posts and looks for places where a reader would want to open the new one, even if your keywords aren't there. For example, one medical article mentions "memory problems" in a list of symptoms. The skill suggested linking those words to a new article about a possible cause of dementia. A plugin looking for the word "dementia" would have skipped that sentence.
+
+Give Claude the address of your new post. It will show you which sentences to link from and which words to turn into links. You choose the ones you like and add them to your site yourself. When you're done, Claude checks that the links are there and lead to the right page.
 
 ## Install
 
