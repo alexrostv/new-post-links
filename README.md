@@ -34,7 +34,7 @@ WordPress sites are read through their public API, others through their sitemap,
 ## Good to know
 
 - The skill won't find every good place, and some of its suggestions will be weak. You decide which ones to use.
-- It looks at headings, paragraphs and lists. Tables, captions, buttons, footnotes, menus, sidebars and footers are skipped.
+- It suggests links only in paragraphs and lists. Headings, tables, captions, buttons, footnotes, menus, sidebars and footers are left alone.
 - On a WordPress site it reads up to 1,000 posts, plus pages if there are no more than 100. Products, case studies and other kinds of content aren't read. On any other site it reads up to 300 pages.
 - If an older page already links to your new post, the skill won't suggest another link there. A link in a "related posts" list can count too.
 - Some website builders, such as Framer, keep hidden copies of a paragraph for different screen sizes. The skill sees those copies, so it may say that a sentence is on the page more than once.
