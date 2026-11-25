@@ -6,7 +6,7 @@ A plugin like Internal Link Juicer can add those links for you. You give it keyw
 
 This Claude skill reads your older posts and looks for places where a reader would want to open the new one, even if your keywords aren't there. For example, a medical article mentions "memory problems" in a list of symptoms. The skill suggests linking those words to a new article about a possible cause of dementia. A plugin looking for the word "dementia" would skip that sentence.
 
-Give Claude the address of your new post. It will show you which sentences to link from and which words to turn into links. You choose the ones you like and add them to your site yourself. When you're done, Claude checks that the links are there and lead to the right page.
+Give Claude the address of your new post. It will show you which sentences to link from and which words to turn into links. You choose the ones you like, and Claude adds them: in WordPress or another editor through the browser, or in your site's files on GitHub. Then it checks that the links are there and lead to the right page.
 
 ## Install
 
@@ -27,7 +27,7 @@ node links.mjs check links.json --live
 
 The format of `links.json` is in [SKILL.md](SKILL.md).
 
-WordPress sites are read through their public API, others through their sitemap, one request a second. It doesn't sign in anywhere and doesn't change anything.
+WordPress sites are read through their public API, others through their sitemap, one request a second. The script only reads. Claude adds the links with the access you give it.
 
 ## Good to know
 

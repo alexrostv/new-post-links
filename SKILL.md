@@ -1,11 +1,11 @@
 ---
 name: new-post-links
-description: Finds sentences on a site that should link to a given page, and checks the links once someone has added them. Use after publishing a post, when few pages link to one or Search Console shows it as "Discovered – currently not indexed", or when someone asks for internal links to a page.
+description: Finds sentences on a site that should link to a given page, adds the links the person approves, and checks them. Use after publishing a post, when few pages link to one or Search Console shows it as "Discovered – currently not indexed", or when someone asks for internal links to a page.
 ---
 
 # Links to a new post
 
-Find the sentences in a site's older pages that should link to this one, propose the exact links, and check them once they're made. The person makes the edits.
+Find the sentences in a site's older pages that should link to this one, propose the exact links, add the ones the person approves, and check them.
 
 The script is `links.mjs` in this skill's folder. Before the first use, run `npm install` there (Node 20 or newer). Run the script from an empty working folder: it keeps what it read in `site.json`.
 
@@ -56,18 +56,14 @@ Write the choices to `links.json`:
 node <skill folder>/links.mjs check links.json
 ```
 
-It fetches each page again and answers `ready`, or `no` and why. Fix or drop every `no`. Show the rest as a numbered list: the page and its section, the sentence between its neighbours with the anchor in bold, where the link leads and, in one line, the reader's question it answers. Ask which to keep, and stop.
+It fetches each page again and answers `ready`, or `no` and why. Fix or drop every `no`. Show the rest as a numbered list: the page and its section, the sentence between its neighbours with the anchor in bold, where the link leads and, in one line, the reader's question it answers. Ask which to add, and wait for the answer.
 
-## 4. Check
+## 4. Add and check
 
-The person selects the anchor, presses Ctrl+K (Cmd+K on a Mac), pastes the address and saves. On most sites that also moves the page's "last updated" date, so say it when you propose. Then:
+Add the approved links with the access you have: the site's files, its API, or its editor in the browser. If you have none, ask for it. Turn the anchor into a link and change nothing else: compare the text before and after, and undo the edit if anything but the link differs. On most sites a save also moves the page's "last updated" date, so say it when you propose. Then:
 
 ```
 node <skill folder>/links.mjs check links.json --live
 ```
 
-`live`: the link is there as planned. `no`: it isn't, or it differs, and how. Right after a save the page may still come from a cache; check again later.
-
-## If you're asked to make the edits
-
-That isn't part of this skill. Confirm first which of the approved links to make, and change only those sentences.
+`live`: the link is there as planned. `no`: it isn't, or it differs, and how; fix it. Right after a save or a deploy the page may still come from a cache; check again later. Finish with the list of what's live.
